@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плехов и Партнеры | Юридическое агентство</title>
+    <meta name="description" content="Профессиональная юридическая помощь в Удмуртии. Сложные споры под ключ.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --bg-body: #F8F9FA;
+            --bg-card: #FFFFFF;
+            --text-main: #0A1F44;     /* Темно-синий */
+            --text-secondary: #546681;
+            --accent: #2F80ED;        /* Благородный синий */
+            --accent-hover: #1D62C1;
+            --accent-light: #E8F1FF;
+            --border: rgba(10,31,68,0.10);
+            --radius: 16px;
+            --container: 1240px;
+            --shadow: 0 10px 40px -10px rgba(10, 31, 68, 0.06);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* --- RESET & BASE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+            position: relative;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: var(--radius); }
+        input, textarea, select { font-family: 'Inter', sans-serif; }
+
+        /* --- UTILITIES --- */
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+        .section { padding: 90px 0; position: relative; z-index: 2; }
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-40 { margin-bottom: 40px; }
+        .mb-60 { margin-bottom: 60px; }
+
+        .section-title { font-size: 38px; margin-bottom: 16px; }
+        .section-subtitle { font-size: 18px; max-width: 700px; margin: 0 auto 60px auto; text-align: center; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary {
+            background-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(47, 128, 237, 0.25);
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(47, 128, 237, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        .btn-outline:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        /* --- BACKGROUND ANIMATION --- */
+        #bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scales-wrapper {
+            width: 80vh; max-width: 800px; height: 80vh;
+            animation: floatScales 16s ease-in-out infinite alternate;
+            transform-origin: center 20%; will-change: transform;
+        }
+        .scale-path {
+            fill: none; stroke: rgba(10, 31, 68, 0.12); stroke-width: 1.2;
+            stroke-linecap: round; stroke-linejoin: round;
+            filter: drop-shadow(0 0 2px rgba(47, 128, 237, 0.1));
+        }
+        @keyframes floatScales {
+            0% { transform: translateY(-15px) rotate(-0.5deg); }
+            100% { transform: translateY(15px) rotate(0.5deg); }
+        }
+
+        /* --- HEADER & LOGO --- */
+        .header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo img { height: 65px; width: auto; border-radius: 0; }
+        
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+        .logo-subtext {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            display: block;
+        }
+        
+        .nav-menu { display: flex; gap: 32px; align-items: center; }
+        .nav-link { font-weight: 500; font-size: 15px; position: relative; color: var(--text-main); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--accent); transition: var(--transition);
+        }
+        .nav-link:hover { color: var(--accent); }
+        .nav-link:hover::after { width: 100%; }
+
+        .burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .burger span { width: 26px; height: 2px; background: var(--text-main); transition: 0.3s; }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 85vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 0 80px 0;
+        }
+        .hero-content { max-width: 900px; position: relative; z-index: 2; }
+        .hero-title {
+            font-size: 64px; line-height: 1.1; margin-bottom: 24px;
+            font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: -1px;
+        }
+        .gradient-text {
+            background: linear-gradient(110deg, #0A1F44 20%, #2F80ED 40%, #6FA8FF 50%, #2F80ED 60%, #0A1F44 80%);
+            background-size: 200% auto; color: #0A1F44; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 6s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        .hero-subtitle {
+            font-size: 20px; color: var(--text-secondary); margin: 0 auto 40px auto;
+            max-width: 600px; line-height: 1.6;
+        }
+
+        /* --- GRIDS & CARDS --- */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        /* Unified Card Style */
+        .card {
+            background: var(--bg-card); padding: 32px; border-radius: var(--radius);
+            border: 1px solid var(--border); transition: var(--transition);
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-6px); box-shadow: var(--shadow);
+            border-color: rgba(47, 128, 237, 0.3);
+        }
+        /* Icon Alignment Fixed */
+        .card-icon {
+            width: 48px; height: 48px; background: var(--accent-light); color: var(--accent);
+            border-radius: 12px; 
+            display: flex; align-items: center; justify-content: center; /* PERFECT CENTER */
+            margin-bottom: 24px; flex-shrink: 0;
+        }
+        
+        /* Text Alignment Fixes */
+        .card-title { 
+            font-size: 20px; font-weight: 700; margin-bottom: 12px; 
+            font-family: 'Playfair Display', serif; 
+            min-height: 50px; /* Aligns items if one title is longer */
+            display: flex; align-items: center;
+        }
+        .card-text { font-size: 15px; flex-grow: 1; color: var(--text-secondary); }
+        
+        .card-list li { margin-bottom: 8px; font-size: 14px; color: var(--text-secondary); padding-left: 15px; position: relative; }
+        .card-list li::before { content: '•'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+        .card-price { margin-top: 16px; font-weight: 700; color: var(--accent); font-size: 20px; }
+
+        /* --- PRICING CARD --- */
+        .price-card { text-align: center; align-items: center; }
+        .price-card .card-title { justify-content: center; min-height: auto; }
+        .price-val { font-size: 28px; font-weight: 700; color: var(--accent); margin: 15px 0; font-family: 'Playfair Display'; }
+        .price-desc { font-size: 14px; color: var(--text-secondary); }
+
+        /* --- SERVICES & WORKFLOW --- */
+        .service-category h3 {
+            font-size: 24px; margin-bottom: 30px; border-left: 3px solid var(--accent); padding-left: 15px;
+        }
+        .workflow-step {
+            position: relative; padding: 30px; background: var(--bg-card);
+            border-radius: var(--radius); border: 1px solid var(--border);
+            height: 100%;
+        }
+        .workflow-step .card-title { min-height: auto; margin-top: 10px;}
+        .step-num {
+            font-size: 40px; font-weight: 700; color: var(--accent-light);
+            font-family: 'Playfair Display', serif; position: absolute; top: 15px; right: 20px; line-height: 1;
+        }
+
+        /* --- TEAM (UPDATED: SMALLER + NO CROP) --- */
+        .team-card { padding: 24px; align-items: center; text-align: center; }
+        
+        .team-photo-wrapper {
+            width: 100%;
+            height: 220px; /* уменьшили масштаб */
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: transparent;
+            position: relative;
+        }
+        
+        /* НЕ ОБРЕЗАЕМ ФОТО */
+        .team-photo { 
+            width: 100%;
+            height: 100%;
+            object-fit: contain;          /* вместо cover */
+            object-position: center;      /* центрируем */
+            transition: none;             /* убрали зум, чтобы не было обрезки */
+        }
+        
+        /* ALIGNMENT FOR TEAM NAMES */
+        .team-name { 
+            font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text-main); 
+            min-height: 28px; /* Ensures alignment if names vary in length */
+            display: flex; align-items: flex-end; justify-content: center;
+        }
+        .team-role { font-size: 14px; color: var(--accent); font-weight: 600; }
+
+        /* --- REVIEWS & CERTS --- */
+        .review-img {
+            width: 100%; height: 300px; object-fit: contain; border: 1px solid var(--border);
+            background: #fff; border-radius: 12px; cursor: zoom-in;
+        }
+        .cert-img {
+            width: 100%; height: 350px; object-fit: contain; border: 1px solid var(--border);
+            background: #fff; border-radius: 12px; cursor: zoom-in;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; margin-bottom: 12px; overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px 24px; font-weight: 600; font-size: 17px; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question::after { content: '+'; font-size: 22px; color: var(--accent); transition: 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; padding: 0 24px; color: var(--text-secondary);
+            transition: 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer { padding-bottom: 24px; max-height: 300px; }
+
+        /* --- CONTACTS --- */
+        .contacts-wrapper {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 0;
+            background: var(--bg-card); border-radius: var(--radius);
+            overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .contacts-info { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .contact-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+        .contact-icon { color: var(--accent); flex-shrink: 0; margin-top: 4px; }
+        .map-frame { width: 100%; height: 100%; min-height: 500px; border: none; }
+        
+        .lead-form input, .lead-form textarea {
+            width: 100%; padding: 14px 18px; margin-bottom: 15px;
+            border: 1px solid #DDE2E8; border-radius: 10px;
+            background: #F8F9FA; transition: 0.3s; font-size: 16px;
+        }
+        .lead-form input:focus, .lead-form textarea:focus {
+            border-color: var(--accent); background: #fff; box-shadow: 0 0 0 3px var(--accent-light);
+        }
+
+        /* --- FOOTER & FLOATING BAR --- */
+        .footer { background: var(--text-main); color: rgba(255,255,255,0.6); padding: 40px 0; font-size: 14px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        
+        /* DESKTOP FLOATING BAR (VERTICAL) */
+        .floating-bar {
+            position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; z-index: 900;
+        }
+        .float-btn {
+            width: 54px; height: 54px; border-radius: 50%; background: var(--bg-card);
+            color: var(--text-main); 
+            display: flex; align-items: center; justify-content: center; /* PERFECT CENTER */
+            box-shadow: 0 8px 20px rgba(10,31,68,0.15); transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .float-btn:hover { background: var(--accent); color: #fff; transform: translateY(-3px); border-color: var(--accent); }
+
+        .toast {
+            position: fixed; top: 20px; right: 20px; background: #fff; padding: 20px;
+            border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border-left: 5px solid #27AE60;
+            z-index: 1000; transform: translateX(150%); transition: transform 0.4s;
+        }
+        .toast.show { transform: translateX(0); }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 48px; }
+            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .contacts-wrapper { grid-template-columns: 1fr; }
+            .map-frame { min-height: 350px; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 36px; }
+            
+            /* Burger Menu */
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; padding: 20px; flex-direction: column; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+            .nav-menu.open { display: flex; }
+            .burger { display: flex; }
+            
+            /* Grids */
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            
+            /* Compact Elements */
+            .team-photo-wrapper { height: 220px; } /* уменьшили и на мобилке */
+            .logo img { height: 50px; }
+            .logo-text { font-size: 22px; }
+            .logo-subtext { font-size: 9px; }
+
+            /* --- MOBILE FLOATING BAR (HORIZONTAL DOCK) --- */
+            .floating-bar {
+                bottom: 0; right: 0; left: 0;
+                flex-direction: row; /* Горизонтально */
+                justify-content: space-evenly;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 12px 20px;
+                border-top: 1px solid var(--border);
+                box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+                width: 100%;
+                gap: 10px;
+            }
+            .float-btn {
+                width: 48px; height: 48px;
+                box-shadow: none;
+                background: transparent;
+                border-color: transparent;
+            }
+            .float-btn:hover { transform: none; background: var(--accent-light); color: var(--accent); }
+
+            /* Отступ для Body, чтобы контент не скрывался за нижней панелью */
+            body { padding-bottom: 75px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- REALISTIC SCALES BACKGROUND -->
+    <div id="bg-container">
+        <div class="scales-wrapper" id="scales-anim">
+            <svg class="scales-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <g class="scale-path">
+                    <path d="M200 380 L200 60" />
+                    <path d="M160 380 H240 Q250 380 250 370 L230 350 H170 L150 370 Q150 380 160 380" />
+                    <path d="M190 60 H210" />
+                    <circle cx="200" cy="80" r="4" />
+                    <g transform="rotate(0, 200, 80)"> 
+                        <path d="M50 80 L350 80" />
+                        <path d="M195 50 L205 50 L200 80 Z" />
+                        <circle cx="50" cy="80" r="3" />
+                        <circle cx="350" cy="80" r="3" />
+                        <g><path d="M50 80 L20 180" /><path d="M50 80 L80 180" /><path d="M50 80 L50 180" /><path d="M10 180 Q50 210 90 180" /><line x1="10" y1="180" x2="90" y2="180" stroke-dasharray="2,2" opacity="0.5"/></g>
+                        <g><path d="M350 80 L320 180" /><path d="M350 80 L380 180" /><path d="M350 80 L350 180" /><path d="M310 180 Q350 210 390 180" /><line x1="310" y1="180" x2="390" y2="180" stroke-dasharray="2,2" opacity="0.5"/></g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Логотип">
+                <div>
+                    <span class="logo-text">ПЛЕХОВ И ПАРТНЕРЫ</span>
+                    <span class="logo-subtext">ЮРИДИЧЕСКОЕ АГЕНТСТВО</span>
+                </div>
+            </a>
+            <nav class="nav-menu">
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#prices" class="nav-link">Стоимость</a>
+                <a href="#advantages" class="nav-link">Преимущества</a>
+                <a href="#team" class="nav-link">Команда</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+                <a href="#contacts" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">Бесплатная консультация</a>
+            </nav>
+            <div class="burger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content reveal">
+                <h1 class="hero-title">
+                    Ваш успех —<br>
+                    <span class="gradient-text">наши компетенции</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Профессиональные юристы для решения сложных правовых вопросов. Берем дело «под ключ», бережем ваше время, нервы и репутацию.
+                </p>
+                <a href="#contacts" class="btn btn-primary">Бесплатная консультация 10 минут</a>
+            </div>
+        </section>
+
+        <!-- COMPETENCIES -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Комплексный подход</h2>
+                    <p class="section-subtitle">Мы становимся вашими надежными советниками, а не разовыми исполнителями.</p>
+                </div>
+                <div class="grid-3 reveal">
+                    <div class="card">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <h4 class="card-title">Дела «под ключ»</h4>
+                        <p class="card-text">Берем на себя все этапы: от первой консультации до исполнительного производства. Минимизируем ваше участие в бюрократии.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h4 class="card-title">Персональный куратор</h4>
+                        <p class="card-text">За вами закрепляется опытный специалист, который сопровождает все ваши правовые вопросы и держит в курсе дела.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <h4 class="card-title">Региональная практика</h4>
+                        <p class="card-text">Успешная работа в судах Удмуртии, Татарстана, Башкортостана и Пермского края. Знаем специфику местных инстанций.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services" style="background: #fff;">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Наши услуги</h2>
+                    <p class="section-subtitle">Оказываем квалифицированную помощь бизнесу и гражданам</p>
+                </div>
+
+                <!-- Business -->
+                <div class="service-category reveal mb-40">
+                    <h3>Для бизнеса</h3>
+                    <div class="grid-3">
+                        <div class="card">
+                            <h4 class="card-title">Арбитраж и Споры</h4>
+                            <ul class="card-list">
+                                <li>Долги и контрагенты</li>
+                                <li>Банкротство</li>
+                                <li>Корпоративные конфликты</li>
+                                <li>Рейдерские захваты</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Сопровождение</h4>
+                            <ul class="card-list">
+                                <li>Налоговые проверки</li>
+                                <li>Сделки M&A</li>
+                                <li>Абонентское обслуживание</li>
+                                <li>Регистрация/Ликвидация</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Трудовое и Финансовое</h4>
+                            <ul class="card-list">
+                                <li>Трудовые споры с работниками</li>
+                                <li>Финансовое право</li>
+                                <li>Административные дела</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individuals -->
+                <div class="service-category reveal mb-40">
+                    <h3>Для частных лиц</h3>
+                    <div class="grid-3">
+                        <div class="card">
+                            <h4 class="card-title">Семья и Наследство</h4>
+                            <ul class="card-list">
+                                <li>Раздел имущества</li>
+                                <li>Бракоразводные процессы</li>
+                                <li>Оформление наследства</li>
+                                <li>Оспаривание завещаний</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Имущество</h4>
+                            <ul class="card-list">
+                                <li>Споры с застройщиками</li>
+                                <li>Сделки с недвижимостью</li>
+                                <li>Жилищное право</li>
+                                <li>Земельные споры</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Защита прав</h4>
+                            <ul class="card-list">
+                                <li>Права потребителей</li>
+                                <li>Некачественные услуги</li>
+                                <li>Честь и достоинство</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specialization -->
+                <div class="service-category reveal">
+                    <h3>Специализация</h3>
+                    <div class="grid-4">
+                        <div class="card">
+                            <h4 class="card-title">Военное право</h4>
+                            <p class="card-text">Жилье, увольнение, соцгарантии.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Медицина</h4>
+                            <p class="card-text">Врачебные ошибки, защита пациентов и клиник.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Автоюрист</h4>
+                            <p class="card-text">ДТП, споры с ГАИ и страховыми.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Страхование</h4>
+                            <p class="card-text">Отказы в выплатах, занижение сумм.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section" id="prices">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Стоимость услуг</h2>
+                    <p class="section-subtitle">Прозрачное ценообразование без скрытых платежей</p>
+                </div>
+                <div class="grid-3 reveal">
+                    <div class="card price-card">
+                        <h4 class="card-title">Консультация</h4>
+                        <div class="price-val">1 000 – 2 000 ₽</div>
+                        <p class="price-desc">Для частных лиц. Малый и средний бизнес — от 3 000 до 7 000 ₽.</p>
+                    </div>
+                    <div class="card price-card">
+                        <h4 class="card-title">Ведение дела</h4>
+                        <div class="price-val">от 50 000 ₽</div>
+                        <p class="price-desc">Проектная работа «под ключ» в суде. Зависит от сложности.</p>
+                    </div>
+                    <div class="card price-card">
+                        <h4 class="card-title">Абонентское</h4>
+                        <div class="price-val">от 50 000 ₽/мес</div>
+                        <p class="price-desc">Полное сопровождение бизнеса. Стоимость зависит от объема задач.</p>
+                    </div>
+                    <div class="card price-card">
+                        <h4 class="card-title">Почасовая</h4>
+                        <div class="price-val">5–15 тыс. ₽/час</div>
+                        <p class="price-desc">Для совершения отдельных значимых юридических действий.</p>
+                    </div>
+                    <div class="card price-card">
+                        <h4 class="card-title">Гонорар успеха</h4>
+                        <div class="price-val">10 – 20 %</div>
+                        <p class="price-desc">От выигранной суммы (при взыскании крупных долгов).</p>
+                    </div>
+                    <div class="card price-card">
+                        <h4 class="card-title">Бесплатно</h4>
+                        <div class="price-val">10 минут</div>
+                        <p class="price-desc">Первичная консультация для оценки перспектив вашего дела.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES -->
+        <section class="section" id="advantages" style="background: #fff;">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Почему выбирают нас</h2>
+                </div>
+                <div class="grid-3 reveal">
+                    <div class="card">
+                        <h4 class="card-title">Экспертность</h4>
+                        <p class="card-text">Более 2000 выигранных дел и 15+ лет опыта команды.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Фиксированная цена</h4>
+                        <p class="card-text">Цена известна до начала работы. Никаких доплат в процессе.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Конфиденциальность</h4>
+                        <p class="card-text">Строгое соблюдение адвокатской тайны и защита данных.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Сложные споры</h4>
+                        <p class="card-text">Уникальный опыт в медицинских, военных и корпоративных делах.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Работа на результат</h4>
+                        <p class="card-text">Гарантия прозрачности и ориентация на цель клиента.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Гибкая оплата</h4>
+                        <p class="card-text">Фикс, абонентская плата или % от успеха в суде.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKFLOW -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Процесс сотрудничества</h2>
+                </div>
+                <div class="grid-4 reveal">
+                    <div class="workflow-step">
+                        <div class="step-num">01</div>
+                        <h4 class="card-title">Консультация</h4>
+                        <p>Бесплатный анализ ситуации за 10 минут.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">02</div>
+                        <h4 class="card-title">Договор</h4>
+                        <p>Фиксация стоимости, сроков и условий.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">03</div>
+                        <h4 class="card-title">Стратегия</h4>
+                        <p>Детальный план с прогнозом результата.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">04</div>
+                        <h4 class="card-title">Сбор документов</h4>
+                        <p>Досудебное урегулирование спора.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">05</div>
+                        <h4 class="card-title">Суд</h4>
+                        <p>Полное ведение дела и представительство.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">06</div>
+                        <h4 class="card-title">Исполнение</h4>
+                        <p>Работа с приставами, получение выплат.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-num">07</div>
+                        <h4 class="card-title">Отчетность</h4>
+                        <p>Информирование клиента на каждом этапе.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section class="section" id="team" style="background: #fff;">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Наша команда</h2>
+                    <p class="section-subtitle">Опытные специалисты с безупречной репутацией</p>
+                </div>
+                <div class="grid-3 reveal" style="justify-content: center;">
+                    <div class="card team-card">
+                        <div class="team-photo-wrapper">
+                            <img src="photo1.jpg" alt="Плехов А.В." class="team-photo" onerror="this.src='https://placehold.co/400x500/eef/0a1f44?text=Фото'">
+                        </div>
+                        <div class="team-name">Плехов А.В.</div>
+                        <div class="team-role">Ведущий юрист-консультант</div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-photo-wrapper">
+                            <img src="photo2.jpg" alt="Радыгина О.В." class="team-photo" onerror="this.src='https://placehold.co/400x500/eef/0a1f44?text=Фото'">
+                        </div>
+                        <div class="team-name">Радыгина О.В.</div>
+                        <div class="team-role">Ведущий юрист-консультант</div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-photo-wrapper">
+                            <img src="photo3.jpg" alt="Соломенников С.М." class="team-photo" onerror="this.src='https://placehold.co/400x500/eef/0a1f44?text=Фото'">
+                        </div>
+                        <div class="team-name">Соломенников С.М.</div>
+                        <div class="team-role">Юрист-консультант (мед.)</div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-photo-wrapper">
+                            <img src="photo4.jpg" alt="Сабанцева А.Н." class="team-photo" onerror="this.src='https://placehold.co/400x500/eef/0a1f44?text=Фото'">
+                        </div>
+                        <div class="team-name">Сабанцева А.Н.</div>
+                        <div class="team-role">Юрист-консультант</div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-photo-wrapper">
+                            <img src="photo5.jpg" alt="Бердышева С.Н." class="team-photo" onerror="this.src='https://placehold.co/400x500/eef/0a1f44?text=Фото'">
+                        </div>
+                        <div class="team-name">Бердышева С.Н.</div>
+                        <div class="team-role">Аспирант, юрист-консультант</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASES -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Успешные кейсы</h2>
+                </div>
+                <div class="grid-2 reveal">
+                    <div class="card">
+                        <h4 class="card-title">ДТП с Mercedes-Maybach</h4>
+                        <p class="card-text">Опротестовали ошибочную схему ГИБДД. Доказали невиновность клиента, отменили штраф.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Вернули 320 000 ₽</h4>
+                        <p class="card-text">Без суда. Подготовили претензию, провели переговоры. Деньги вернулись через 10 дней.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Земельный спор</h4>
+                        <p class="card-text">Экспертиза подтвердила границы. Встречный иск удовлетворен, претензии соседей отклонены.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Спор по КАСКО</h4>
+                        <p class="card-text">Взыскали со страховой более 70% от суммы возмещения в досудебном порядке.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section class="section" id="reviews" style="background: #fff;">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Отзывы клиентов</h2>
+                </div>
+                <div class="grid-3 reveal">
+                    <img src="photo6.jpg" class="review-img" alt="Отзыв" onerror="this.src='https://placehold.co/400x600/eee/999?text=Отзыв'">
+                    <img src="photo7.jpg" class="review-img" alt="Отзыв" onerror="this.src='https://placehold.co/400x600/eee/999?text=Отзыв'">
+                    <img src="photo8.jpg" class="review-img" alt="Отзыв" onerror="this.src='https://placehold.co/400x600/eee/999?text=Отзыв'">
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section class="section" id="certificates">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Сертификаты и документы</h2>
+                </div>
+                <div class="grid-3 reveal">
+                    <img src="photo9.jpg" class="cert-img" alt="Документ" onerror="this.src='https://placehold.co/400x600/eee/999?text=Документ'">
+                    <img src="photo10.jpg" class="cert-img" alt="Документ" onerror="this.src='https://placehold.co/400x600/eee/999?text=Документ'">
+                    <img src="photo11.jpg" class="cert-img" alt="Документ" onerror="this.src='https://placehold.co/400x600/eee/999?text=Документ'">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq" style="background: #fff;">
+            <div class="container reveal">
+                <div class="text-center">
+                    <h2 class="section-title">Вопрос / Ответ</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">Сколько стоит ведение судебного дела?</div>
+                        <div class="faq-answer">Стоимость зависит от сложности дела. Минимальный бюджет — от 15 000 рублей. Точную цену назовем после консультации.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Вы работаете только в Воткинске?</div>
+                        <div class="faq-answer">Нет, мы представляем интересы клиентов по всей Удмуртии, в Татарстане, Башкортостане и Пермском крае.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Как быстро вы сможете начать работу?</div>
+                        <div class="faq-answer">В течение 1-2 часов после заключения договора (в срочных случаях — немедленно).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Можно ли оплатить услуги после выигрыша?</div>
+                        <div class="faq-answer">Да, для отдельных категорий дел возможен гонорар успеха (10-20% от суммы иска).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Вы даете гарантию выигрыша в суде?</div>
+                        <div class="faq-answer">Мы гарантируем профессиональное ведение дела и максимальный результат, но 100% гарантию в суде не может дать никто.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Что входит в абонентское обслуживание?</div>
+                        <div class="faq-answer">Консультации, проверка договоров, представительство в госорганах, претензионная работа.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Какие гарантии вы предоставляете?</div>
+                        <div class="faq-answer">Работаем по официальному договору, гарантируем полную конфиденциальность и отсутствие скрытых платежей.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Что нужно для начала работы?</div>
+                        <div class="faq-answer">Свяжитесь с нами для бесплатной 10-минутной консультации, чтобы мы оценили перспективы вашего дела.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTS -->
+        <section class="section" id="contacts">
+            <div class="container reveal">
+                <div class="text-center">
+                    <h2 class="section-title">Контакты</h2>
+                    <p class="section-subtitle">Оставьте заявку на бесплатную консультацию</p>
+                </div>
+                
+                <div class="contacts-wrapper">
+                    <div class="contacts-info">
+                        <div class="contact-row">
+                            <div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                            <div>
+                                <strong>Адрес:</strong><br>
+                                УР, г. Воткинск, ул. Робьеспьера 16, офис 4
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                            <div>
+                                <strong>Режим работы:</strong><br>
+                                ПН–ПТ 9:00–16:30
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                            <div>
+                                <strong>Телефон:</strong><br>
+                                <a href="tel:+79199094611">+7 (919) 909-46-11</a>
+                            </div>
+                        </div>
+
+                        <hr style="border:0; border-top:1px solid var(--border); margin: 30px 0;">
+
+                        <form class="lead-form" id="mainForm">
+                            <input type="text" name="name" required placeholder="Ваше имя">
+                            <input type="tel" name="phone" class="phone-mask" required placeholder="+7 (___) ___-__-__">
+                            <textarea name="message" rows="3" placeholder="Кратко о ситуации (необязательно)"></textarea>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+                            <p style="font-size: 12px; margin-top: 10px; text-align: center;">Мы гарантируем конфиденциальность.</p>
+                        </form>
+                    </div>
+                    
+                    <!-- Map (Yandex Search Frame) -->
+                    <div class="map-container">
+                       <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?text=УР%2C%20Воткинск%2C%20ул.%20Робьеспьера%2016%2C%20офис%204&z=17" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>
+                © 2025 Плехов и Партнеры.<br>Все права защищены.
+            </div>
+            <div style="text-align: right;">
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ACTIONS (HORIZONTAL ON MOBILE) -->
+    <div class="floating-bar">
+        <a href="https://wa.me/79199094611" target="_blank" class="float-btn" title="WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+        <a href="https://t.me/yurist_zayvki_bot" target="_blank" class="float-btn" title="Telegram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .24z"/></svg>
+        </a>
+        <a href="tel:+79199094611" class="float-btn" title="Позвонить">
+            <!-- UPDATED: PHONE HANDSET ICON -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">
+        <h4>Заявка отправлена!</h4>
+        <p>Мы свяжемся с вами в ближайшее время.</p>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // CONFIG
+        const BOT_TOKEN = "8391293496:AAG_A09tGDbfGMDiFHReeuhDppSmB3ZAF6E";
+        const CHAT_ID = "743746571";
+        const TG_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        const BOT_LINK = "https://t.me/yurist_zayvki_bot";
+
+        // PARALLAX EFFECT FOR SCALES
+        const scales = document.getElementById('scales-anim');
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth - e.pageX * 2) / 100;
+                const y = (window.innerHeight - e.pageY * 2) / 100;
+                scales.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
+
+        // MENU TOGGLE
+        function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('open'); }
+
+        // ACCORDION
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // PHONE MASK
+        document.querySelectorAll('.phone-mask').forEach(input => {
+            input.addEventListener('input', function(e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                if (!x[2] && x[1] !== '') {
+                    e.target.value = x[1] === '7' ? x[1] : '7' + x[1];
+                } else {
+                    e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+                }
+            });
+        });
+
+        // SCROLL REVEAL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // FORM SUBMISSION
+        const handleFormSubmit = async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalBtnText = btn.innerText;
+            btn.disabled = true; btn.innerText = "Отправка...";
+
+            const formData = new FormData(form);
+            const text = `<b>🔥 Заявка с сайта</b>\n<b>Имя:</b> ${formData.get('name')}\n<b>Телефон:</b> ${formData.get('phone')}\n<b>Ситуация:</b> ${formData.get('message') || '-'}`;
+
+            try {
+                const response = await fetch(TG_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: "HTML" })
+                });
+                if (response.ok) {
+                    document.getElementById('toast').classList.add('show');
+                    setTimeout(() => document.getElementById('toast').classList.remove('show'), 3000);
+                    form.reset();
+                } else { throw new Error('API Error'); }
+            } catch (error) {
+                alert("Ошибка отправки. Открываем Telegram...");
+                window.open(BOT_LINK, '_blank');
+            } finally {
+                btn.disabled = false; btn.innerText = originalBtnText;
+            }
+        };
+
+        document.querySelectorAll('.lead-form').forEach(form => form.addEventListener('submit', handleFormSubmit));
+    </script>
+</body>
+</html>
